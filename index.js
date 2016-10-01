@@ -248,11 +248,11 @@ controller.hears(["keks(.*)"], ['ambient', 'direct_message', 'direct_mention', '
   bot.reply(message, multi_res(responses))
 })
 
-controller.hears(["k"], ['ambient', 'direct_message', 'direct_mention', 'mention'], function (bot, message) {
+/*controller.hears(["k"], ['ambient', 'direct_message', 'direct_mention', 'mention'], function (bot, message) {
   var responses = ["...iss mei ass.", "k? k what? The letter before l, the letter after j? Did you know that in jk, k stands for kidding? So your reply is kidding? Or k as in potassium? Do you need some special k in breakfast? k as in i can k/o you? Can i knock you out and feed you to hungry sharks? Sharks has k in it."];
     
   bot.reply(message, multi_res(responses))
-})
+})*/
 
 controller.hears(["nespresso"], ['ambient', 'direct_message', 'direct_mention', 'mention'], function (bot, message) {
   var responses = ["What else?"];
