@@ -134,13 +134,13 @@ controller.hears(["(\\bfail\\b)"], ['ambient', 'direct_message', 'direct_mention
   bot.reply(message, multi_res(responses))
 })
 
-controller.hears(["(\\bf(.*)k you\\b)", "(\\bf(.*)k u\\b)"], ['ambient', 'direct_message', 'direct_mention', 'mention'], function (bot, message) {
+controller.hears(["(\\bf(.*)k (you|u)\\b)"], ['ambient', 'direct_message', 'direct_mention', 'mention'], function (bot, message) {
   var responses = ["OK, but I'll be on the top.", "I love you, too.", "Not if I fuck you first.", "Can I at least get a kiss first?", "No thanks.", "Buy me dinner first.", "Not tonight, darling. I have a headache.", "I have a boyfriend."];
     
   bot.reply(message, multi_res(responses))
 })
 
-controller.hears(["(\\btschüss\\b)", "(\\btschau\\b)", "(\\bbis später\\b)", "(\\bbis gleich\\b)", "(\\bbis glei\\b)", "(\\bbis bald\\b)", "(\\bcya\\b)", "(\\bcu\\b)", "(\\bbye\\b)", "(\\bbyebye\\b)", "(\\bbb\\b)"], ['ambient', 'direct_message', 'direct_mention', 'mention'], function (bot, message) {
+controller.hears(["(\\btschüss\\b)", "(\\btschau\\b)", "(\\bbis (später|gleich|glei|bald)\\b)", "(\\bcya\\b)", "(\\bcu\\b)", "(\\bbye\\b)", "(\\bbyebye\\b)", "(\\bbb\\b)"], ['ambient', 'direct_message', 'direct_mention', 'mention'], function (bot, message) {
   var responses = ["bubai!", "bussi bussi <3", "Na endlich...", "Tüdelü!", "Heute ist nicht alle Tage; ich komm wieder, keine Frage!", "xoxo"];
     
   bot.reply(message, multi_res(responses))
@@ -212,7 +212,7 @@ controller.hears(["(\\bgeil\\b)", "(\\bcool\\b)"], ['ambient', 'direct_message',
   bot.reply(message, multi_res(responses))
 })
 
-controller.hears(["(\\bbob is(.*) scheisse\\b)", "(\\bbob is(.*) scheiße\\b)", "(\\bbob is(.*) kacke\\b)", "(\\bbob is(.*) mist\\b)", "(\\bbob sucks\\b)", "(\\bbot sucks\\b)", "(\\bscheiss bob\\b)", "(\\bscheiß bob\\b)", "(\\bscheiss bot\\b)", "(\\bscheiß bot\\b)"], ['ambient', 'direct_message', 'direct_mention', 'mention'], function (bot, message) {
+controller.hears(["(\\bbob is(.*) (scheisse|scheiße|kacke|mist)\\b)", "(\\b(bot|bob) sucks\\b)", "(\\b(scheiss|scheiß|kack) (bob|bot)\\b)"], ['ambient', 'direct_message', 'direct_mention', 'mention'], function (bot, message) {
   var responses = ["Du auch.", "Schnauze sonst Beule!", "Bist du bescheuert oder was?!", "Willst du Probleme?!", "Klappe sonst installier ich dir 10 neue Toolbars.", "Ich hab mehr Antworten parat als du Gehirnzellen besitzt.", "Ruhe sonst rappelt's im Karton!"];
     
   bot.reply(message, multi_res(responses))
@@ -230,7 +230,7 @@ controller.hears(["(\\b:euro:\\b)", "(\\b:dollar:\\b)", "(\\b:yen:\\b)", "(\\b:p
   bot.reply(message, multi_res(responses))
 })
 
-controller.hears(["(\\bwie spät ist es\\b)", "(\\bwie spät is\\b)", "(\\bwie spod is\\b)"], ['ambient', 'direct_message', 'direct_mention', 'mention'], function (bot, message) {
+controller.hears(["(\\bwie spät ist es\\b)", "(\\bwie (spät|spod) is\\b)"], ['ambient', 'direct_message', 'direct_mention', 'mention'], function (bot, message) {
   var responses = ["Zeit zum Uhr kaufen.", "Zeit für ein Bier.", "Genau so spät wie gestern um die selbe Uhrzeit.", "42.", "Sehr.", "Viel zu spät.", "watch.exe hat einen Fehler festgestellt und wurde beendet.", "Hammer Time!"];
     
   bot.reply(message, multi_res(responses))
