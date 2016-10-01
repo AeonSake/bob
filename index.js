@@ -347,9 +347,9 @@ controller.hears(["(\\bhow much is the fish\\b)"], ['ambient', 'direct_message',
 })
 
 controller.hears(["(\\bsei leise\\b)", "(\\bsei ruhig\\b)", "(\\bhalt die klappe\\b)", "(\\bhalt die fresse\\b)", "(\\bhör auf\\b)", "(\\bshut up\\b)"], ['ambient', 'direct_message', 'direct_mention', 'mention'], function (bot, message) {
-  var responses = ["Niemals.", "Make me.", "Heul doch."];
+  var responses = ["Niemals.", "Make me.", "Heul doch.", "Lass ich mir von dir doch nicht sagen."];
   
-  if (message.user = "U2G081BBQ") {
+  if (message.user = "U2G081BBQ" && muted == false) {
     bot.reply(message, "Sehrwohl Meister.")
     bot.reply(message, "[Bob wurde deaktiviert]")
     muted = true
@@ -360,7 +360,7 @@ controller.hears(["(\\bsei leise\\b)", "(\\bsei ruhig\\b)", "(\\bhalt die klappe
 
 controller.hears(["(\\bbob (rede|wach auf|wake up)\\b)"], ['ambient', 'direct_message', 'direct_mention', 'mention'], function (bot, message) {
   
-  if (message.user = "U2G081BBQ") {
+  if (message.user = "U2G081BBQ" && muted == true) {
     bot.reply(message, "I'm back, bitches!")
     bot.reply(message, "[Bob ist wieder aktiv]")
     muted = false
@@ -425,6 +425,7 @@ controller.hears(["(\\b\\b)"], ['ambient', 'direct_message', 'direct_mention', '
 })
 */
 
+/*
 controller.hears(["(\\bbobtest\\b)"], ['ambient', 'direct_message', 'direct_mention', 'mention'], function (bot, message) {
   bot.reply(message,{
       text: "A more complex response",
@@ -460,4 +461,4 @@ controller.hears(["(\\bbobtest4\\b)"], ['ambient', 'direct_message', 'direct_men
       bot.reply(message, "success");
   }
 })
-
+*/
