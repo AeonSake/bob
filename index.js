@@ -439,7 +439,7 @@ controller.hears(["(\\bbobtest2\\b)"], ['ambient', 'direct_message', 'direct_men
   bot.reply(message, reply_with_attachments);
 })
 
-controller.hears(["(\\bbobtest2\\b)"], ['ambient', 'direct_message', 'direct_mention', 'mention'], function (bot, message) {
+controller.hears(["(\\bbobtest3\\b)"], ['ambient', 'direct_message', 'direct_mention', 'mention'], function (bot, message) {
   bot.reply(message, message.user);
 })
 
