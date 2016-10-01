@@ -45,34 +45,10 @@ controller.on('bot_channel_join', function (bot, message) {
 // Slackbot responses
 
 controller.hears(['hi'], ['ambient', 'direct_message','direct_mention','mention'], function (bot, message) {
-  bot.reply(message, 'Hello.')
+  bot.reply(message, 'Hello1.')
+  bot.reply(message, 'Hello2.')
+  bot.reply(message, 'Hello3.')
 })
 
 // Testing
 
-controller.hears('interactive', 'direct_message', function(bot, message) {
-
-    bot.reply(message, {
-        attachments:[
-            {
-                title: 'Do you want to interact with my buttons?',
-                callback_id: '123',
-                attachment_type: 'default',
-                actions: [
-                    {
-                        "name":"yes",
-                        "text": "Yes",
-                        "value": "yes",
-                        "type": "button",
-                    },
-                    {
-                        "name":"no",
-                        "text": "No",
-                        "value": "no",
-                        "type": "button",
-                    }
-                ]
-            }
-        ]
-    });
-});
