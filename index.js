@@ -404,14 +404,14 @@ controller.hears(["(\\bbob\\b)"], ['ambient', 'direct_message', 'direct_mention'
 // ===== Testing =====
 // Syntax:
 /*
-controller.hears(["\\b\\b"], ['ambient', 'direct_message', 'direct_mention', 'mention'], function (bot, message) {
+controller.hears(["(\\b\\b)"], ['ambient', 'direct_message', 'direct_mention', 'mention'], function (bot, message) {
   var responses = [""];
     
   bot.reply(message, multi_res(responses))
 })
 */
 
-controller.hears(["\\bbob_test\\b"], ['ambient', 'direct_message', 'direct_mention', 'mention'], function (bot, message) {
+controller.hears(["(\\bbob_test\\b)"], ['ambient', 'direct_message', 'direct_mention', 'mention'], function (bot, message) {
   var responses = [bot.api.users.info];
     
   bot.reply(message, multi_res(responses))
