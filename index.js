@@ -31,16 +31,18 @@ if (token) {
   require('beepboop-botkit').start(controller, { debug: true })
 }
 
-var muted = false;
-
 // ===============================
 // ========== Responses ==========
 // ===============================
 
 // ===== General stuff =====
 
+var muted = false;
+
 function multi_res(res) {
-  return res[Math.floor(Math.random() * res.length)];
+  if (muted == false) {
+    bot.reply(message, res[Math.floor(Math.random() * res.length)])
+  }
 }
 
 controller.hears(["(\\bwer bist du\\b)", "(\\bwho are you\\b)", "(\\bwie heißt du\\b)", "(\\bwie hast du\\b)", "(\\bwie heisst du\\b)", "(\\bwer bistn du\\b)"], ['direct_message', 'direct_mention', 'mention'], function(bot, message) {
@@ -53,7 +55,9 @@ controller.on('bot_channel_join', function (bot, message) {
 })
 
 controller.on('user_channel_join', function (bot, message) {
-  bot.reply(message, "Hallo und willkommen in unserer Selbsthilfegruppe.")
+  if (muted == false) {
+    bot.reply(message, "Hallo und willkommen in unserer Selbsthilfegruppe.")
+  }
 })
 
 // ===== Names =====
