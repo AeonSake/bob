@@ -29,39 +29,50 @@ if (token) {
 }
 
 // ===== Code part =====
+
 // General stuff
-controller.hears(['uptime', 'wer bist du', 'who are you', 'wie heißt du', 'wie hast du', 'wie heisst du', 'wer bistn du'], ['direct_message','direct_mention','mention'], function(bot, message) {
 
-  var hostname = os.hostname();
-  var uptime = formatUptime(process.uptime());
+controller.hears(['wer bist du', 'who are you', 'wie heißt du', 'wie hast du', 'wie heisst du', 'wer bistn du'], ['direct_message','direct_mention','mention'], function(bot, message) {
 
-  bot.reply(message, ':robot_face: Ich bin ein Bot namens <@' + bot.identity.name + '>. Ich bin seit ' + uptime + ' aktiv.');
+  bot.reply(message, 'Mein Name ist B.O.B. - kurz für Brainless Operating Bot.')
+})
 
-  });
 
-function formatUptime(uptime) {
-  var unit = 'Sekunde';
-  if (uptime > 60) {
-    uptime = uptime / 60;
-    unit = 'Minute';
-  }
-  if (uptime > 60) {
-    uptime = uptime / 60;
-    unit = 'Stunde';
-  }
-  if (uptime != 1) {
-    unit = unit + 'n';
-  }
-
-  uptime = uptime + ' ' + unit;
-  return uptime;
-}
+controller.on('bot_channel_join', function (bot, message) {
+  bot.reply(message, 'Hello world!')
+})
 
 // Slackbot responses
-controller.on('bot_channel_join', function (bot, message) {
-  bot.reply(message, "I'm here!")
-})
 
 controller.hears(['hi'], ['ambient', 'direct_message','direct_mention','mention'], function (bot, message) {
   bot.reply(message, 'Hello.')
 })
+
+// Testing
+
+controller.hears('interactive', 'direct_message', function(bot, message) {
+
+    bot.reply(message, {
+        attachments:[
+            {
+                title: 'Do you want to interact with my buttons?',
+                callback_id: '123',
+                attachment_type: 'default',
+                actions: [
+                    {
+                        "name":"yes",
+                        "text": "Yes",
+                        "value": "yes",
+                        "type": "button",
+                    },
+                    {
+                        "name":"no",
+                        "text": "No",
+                        "value": "no",
+                        "type": "button",
+                    }
+                ]
+            }
+        ]
+    });
+});
