@@ -31,12 +31,14 @@ if (token) {
 // ===== Code part =====
 
 // General stuff
+function multi_res(res) {
+  return res[Math.floor(Math.random() * res.length)];
+}
 
 controller.hears(['wer bist du', 'who are you', 'wie heißt du', 'wie hast du', 'wie heisst du', 'wer bistn du'], ['direct_message','direct_mention','mention'], function(bot, message) {
 
   bot.reply(message, 'Mein Name ist B.O.B. - kurz für Brainless Operating Bot.')
 })
-
 
 controller.on('bot_channel_join', function (bot, message) {
   bot.reply(message, 'Hello world!')
@@ -45,9 +47,9 @@ controller.on('bot_channel_join', function (bot, message) {
 // Slackbot responses
 
 controller.hears(['hi'], ['ambient', 'direct_message','direct_mention','mention'], function (bot, message) {
-  bot.reply(message, 'Hello1.')
-  bot.reply(message, 'Hello2.')
-  bot.reply(message, 'Hello3.')
+  var responses = ['Hello1', 'Hello2', 'Hello3'];
+    
+  bot.reply(message, multi_res(responses))
 })
 
 // Testing
