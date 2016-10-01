@@ -407,12 +407,12 @@ controller.hears(["\b\b"], ['ambient', 'direct_message', 'direct_mention', 'ment
   bot.reply(message, multi_res(responses))
 })
 */
-controller.hears(["(\bTEST1\b)"], ['ambient', 'direct_message', 'direct_mention', 'mention'], function (bot, message) {
+controller.hears(["[\bTEST1\b]"], ['ambient', 'direct_message', 'direct_mention', 'mention'], function (bot, message) {
   var responses = ["Success1"];
     
   bot.reply(message, multi_res(responses))
 })
-controller.hears(["(\b)TEST2(\b)"], ['ambient', 'direct_message', 'direct_mention', 'mention'], function (bot, message) {
+controller.hears(["[\b]TEST2[\b]"], ['ambient', 'direct_message', 'direct_mention', 'mention'], function (bot, message) {
   var responses = ["Success2"];
     
   bot.reply(message, multi_res(responses))
