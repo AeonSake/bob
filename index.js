@@ -386,13 +386,13 @@ controller.hears(["w(.)s is(.*) mi(.) di(.)"], ['ambient', 'direct_message', 'di
   bot.reply(message, multi_res(responses))
 })
 
-controller.hears(["challenge "], ['ambient', 'direct_message', 'direct_mention', 'mention'], function (bot, message) {
+controller.hears(["challenge"], ['ambient', 'direct_message', 'direct_mention', 'mention'], function (bot, message) {
   var responses = ["Für dich ist auch das Aufstehen eine metale Herausforderung."];
     
   bot.reply(message, multi_res(responses))
 })
 
-controller.hears(["bob "], ['ambient', 'direct_message', 'direct_mention', 'mention'], function (bot, message) {
+controller.hears(["^bob$"], ['ambient', 'direct_message', 'direct_mention', 'mention'], function (bot, message) {
   var responses = ["Für dich immer noch Herr Bob.", "Wadap dumbass?", "Was willst du jetzt schon wieder?!", "Lass mich in Ruhe.", "Sprich mich nicht an.", "Du hast kein Recht meinen Namen zu benutzen."];
     
   bot.reply(message, multi_res(responses))
