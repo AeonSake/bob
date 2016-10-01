@@ -414,7 +414,11 @@ controller.hears(["(\\b\\b)"], ['ambient', 'direct_message', 'direct_mention', '
 */
 
 controller.hears(["(\\bbobtest\\b)"], ['ambient', 'direct_message', 'direct_mention', 'mention'], function (bot, message) {
-  bot.reply(message, bot.api.users.info)
+  bot.reply(message,{
+      text: "A more complex response",
+      username: "ReplyBot",
+      icon_emoji: ":dash:",
+    });
 })
 
 
