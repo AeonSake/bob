@@ -1,4 +1,7 @@
-// ===== SETTINGS =====
+// ==============================
+// ========== SETTINGS ==========
+// ==============================
+
 var Botkit = require('botkit')
 var os = require('os');
 
@@ -28,9 +31,12 @@ if (token) {
   require('beepboop-botkit').start(controller, { debug: true })
 }
 
-// ===== Code part =====
+// ===============================
+// ========== Responses ==========
+// ===============================
 
-// General stuff
+// ===== General stuff =====
+
 function multi_res(res) {
   return res[Math.floor(Math.random() * res.length)];
 }
@@ -44,7 +50,67 @@ controller.on('bot_channel_join', function (bot, message) {
   bot.reply(message, 'Hello world!')
 })
 
-// Slackbot responses
+// ===== Names =====
+
+controller.hears(['torben'], ['ambient', 'direct_message','direct_mention','mention'], function (bot, message) {
+  var responses = ['Verwende den Shadestep!'];
+    
+  bot.reply(message, multi_res(responses))
+})
+
+controller.hears(['marco'], ['ambient', 'direct_message','direct_mention','mention'], function (bot, message) {
+  var responses = ['Wer ist dieser randy, kick den mal!', 'Du randy oida :D', 'Polo!'];
+    
+  bot.reply(message, multi_res(responses))
+})
+
+controller.hears(['dave'], ['ambient', 'direct_message','direct_mention','mention'], function (bot, message) {
+  var responses = ['Disco-Dave! *dance*', 'Rave-Dave! :the_horns:'];
+    
+  bot.reply(message, multi_res(responses))
+})
+
+controller.hears(['david'], ['ambient', 'direct_message','direct_mention','mention'], function (bot, message) {
+  bot.reply(message, 'Des hast DAVE!')
+})
+
+controller.hears(['dope'], ['ambient', 'direct_message','direct_mention','mention'], function (bot, message) {
+  var responses = ['Double-Doping!'];
+    
+  bot.reply(message, multi_res(responses))
+})
+
+controller.hears(['joh'], ['ambient', 'direct_message','direct_mention','mention'], function (bot, message) {
+  var responses = ['Johsiris m0thafukkah!'];
+    
+  bot.reply(message, multi_res(responses))
+})
+
+controller.hears(['twain'], ['ambient', 'direct_message','direct_mention','mention'], function (bot, message) {
+  var responses = ['1 gegen 1 du randy?'];
+    
+  bot.reply(message, multi_res(responses))
+})
+
+controller.hears(['chris'], ['ambient', 'direct_message','direct_mention','mention'], function (bot, message) {
+  var responses = ['Immer dieser Obstesser ^^'];
+    
+  bot.reply(message, multi_res(responses))
+})
+
+controller.hears(['fabio'], ['ambient', 'direct_message','direct_mention','mention'], function (bot, message) {
+  var responses = ['Was isch des?'];
+    
+  bot.reply(message, multi_res(responses))
+})
+
+controller.hears(['lisa'], ['ambient', 'direct_message','direct_mention','mention'], function (bot, message) {
+  var responses = ['Keeeeeeekseeee!', 'Kekse Kekse Kekse!!', 'Wo is die Keks-Mama?', "Jetzt reicht's dann wieder mal Lisa."];
+    
+  bot.reply(message, multi_res(responses))
+})
+
+// ===== Other =====
 
 controller.hears(['hi'], ['ambient', 'direct_message','direct_mention','mention'], function (bot, message) {
   var responses = ['Hello1', 'Hello2', 'Hello3'];
@@ -52,5 +118,16 @@ controller.hears(['hi'], ['ambient', 'direct_message','direct_mention','mention'
   bot.reply(message, multi_res(responses))
 })
 
-// Testing
+// ===== Testing =====
+// Syntax:
+/*
+controller.hears([''], ['ambient', 'direct_message','direct_mention','mention'], function (bot, message) {
+  var responses = [''];
+    
+  bot.reply(message, multi_res(responses))
+})
+*/
+
+
+
 
