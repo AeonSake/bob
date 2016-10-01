@@ -443,3 +443,9 @@ controller.hears(["(\\bbobtest3\\b)"], ['ambient', 'direct_message', 'direct_men
   bot.reply(message, message.user);
 })
 
+controller.hears(["(\\bbobtest4\\b)"], ['ambient', 'direct_message', 'direct_mention', 'mention'], function (bot, message) {
+  if (message.user = "U2G081BBQ") {
+      bot.reply(message, success);
+  }
+})
+
