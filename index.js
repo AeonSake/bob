@@ -30,27 +30,27 @@ if (token) {
 
 // ===== Code part =====
 // General stuff
-controller.hears(['uptime', 'wer bist du', 'who are you', 'wie heißt du', 'wie hast du', 'wie heisst du', 'wer bistn du'], 'direct_message,direct_mention,mention', function(bot, message) {
+controller.hears(['uptime', 'wer bist du', 'who are you', 'wie heißt du', 'wie hast du', 'wie heisst du', 'wer bistn du'], ['direct_message','direct_mention','mention'], function(bot, message) {
 
   var hostname = os.hostname();
   var uptime = formatUptime(process.uptime());
 
-  bot.reply(message, ':robot_face: Ich bin ein Bot namens <@' + bot.identity.name + '>. Ich bin seit ' + uptime + ' auf ' + hostname + 'aktiv.');
+  bot.reply(message, ':robot_face: Ich bin ein Bot namens <@' + bot.identity.name + '>. Ich bin seit ' + uptime + ' aktiv.');
 
   });
 
 function formatUptime(uptime) {
-  var unit = 'second';
+  var unit = 'Sekunde';
   if (uptime > 60) {
     uptime = uptime / 60;
-    unit = 'minute';
+    unit = 'Minute';
   }
   if (uptime > 60) {
     uptime = uptime / 60;
-    unit = 'hour';
+    unit = 'Stunde';
   }
   if (uptime != 1) {
-    unit = unit + 's';
+    unit = unit + 'n';
   }
 
   uptime = uptime + ' ' + unit;
