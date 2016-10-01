@@ -392,7 +392,7 @@ controller.hears(["(\bchallenge\b)"], ['ambient', 'direct_message', 'direct_ment
   bot.reply(message, multi_res(responses))
 })
 
-controller.hears(["(\bbob\b)"], ['ambient', 'direct_message', 'direct_mention', 'mention'], function (bot, message) {
+controller.hears(["(\\bbob\\b)"], ['ambient', 'direct_message', 'direct_mention', 'mention'], function (bot, message) {
   var responses = ["Für dich immer noch Herr Bob.", "Wadap dumbass?", "Was willst du jetzt schon wieder?!", "Lass mich in Ruhe.", "Sprich mich nicht an.", "Du hast kein Recht meinen Namen zu benutzen."];
     
   bot.reply(message, multi_res(responses))
