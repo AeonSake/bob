@@ -346,8 +346,11 @@ controller.hears(["(\\bhow much is the fish\\b)"], ['ambient', 'direct_message',
 
 controller.hears(["(\\bsei leise\\b)", "(\\bsei ruhig\\b)", "(\\bhalt die klappe\\b)", "(\\bhalt die fresse\\b)", "(\\bhör auf\\b)", "(\\bshut up\\b)"], ['ambient', 'direct_message', 'direct_mention', 'mention'], function (bot, message) {
   var responses = ["Niemals.", "Make me.", "Heul doch."];
-    
-  bot.reply(message, multi_res(responses))
+  
+  if (1==2) {
+  } else {
+    bot.reply(message, multi_res(responses))
+  }
 })
 
 controller.hears(["(\\bfix\\b)"], ['ambient', 'direct_message', 'direct_mention', 'mention'], function (bot, message) {
@@ -408,6 +411,10 @@ controller.hears(["\\b\\b"], ['ambient', 'direct_message', 'direct_mention', 'me
 })
 */
 
-
+controller.hears(["\\bbob_test\\b"], ['ambient', 'direct_message', 'direct_mention', 'mention'], function (bot, message) {
+  var responses = [bot.api.users.info];
+    
+  bot.reply(message, multi_res(responses))
+})
 
 
