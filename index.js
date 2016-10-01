@@ -1,5 +1,6 @@
 // ===== SETTINGS =====
 var Botkit = require('botkit')
+var os = require('os');
 
 var token = process.env.SLACK_TOKEN
 
@@ -29,8 +30,7 @@ if (token) {
 
 // ===== Code part =====
 // General stuff
-controller.hears(['uptime', 'wer bist du', 'who are you', 'wie heißt du', 'wie hast du', 'wie heisst du', 'wer bistn du'],
-    'direct_message,direct_mention,mention', function(bot, message) {
+controller.hears(['uptime', 'wer bist du', 'who are you', 'wie heißt du', 'wie hast du', 'wie heisst du', 'wer bistn du'], 'direct_message,direct_mention,mention', function(bot, message) {
 
   var hostname = os.hostname();
   var uptime = formatUptime(process.uptime());
