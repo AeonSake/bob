@@ -2,10 +2,10 @@
 // ========== SETTINGS ==========
 // ==============================
 
-var Botkit = require('botkit')
+var Botkit = require('botkit');
 var os = require('os');
 
-var token = process.env.SLACK_TOKEN
+var token = process.env.SLACK_TOKEN;
 
 var controller = Botkit.slackbot({
   // reconnect to Slack RTM when connection goes bad
@@ -30,6 +30,8 @@ if (token) {
   console.log('Starting in Beep Boop multi-team mode')
   require('beepboop-botkit').start(controller, { debug: true })
 }
+
+var muted = false;
 
 // ===============================
 // ========== Responses ==========
@@ -412,9 +414,7 @@ controller.hears(["(\\b\\b)"], ['ambient', 'direct_message', 'direct_mention', '
 */
 
 controller.hears(["(\\bbobtest\\b)"], ['ambient', 'direct_message', 'direct_mention', 'mention'], function (bot, message) {
-  var responses = [bot.api.users.info];
-    
-  bot.reply(message, multi_res(responses))
+  bot.reply(message, bot.api.users.info)
 })
 
 
