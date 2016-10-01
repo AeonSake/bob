@@ -196,7 +196,7 @@ controller.hears(["(\\bkopf-zahl\\b)", "(\\bkopf oder zahl\\b)"], ['ambient', 'd
   if (muted == false) bot.reply(message, multi_res(responses))
 })
 
-controller.hears(["(\\b:shit:\\b)", "(\\b:hankey:\\b)", "(\\b:poop:\\b)"], ['ambient', 'direct_message', 'direct_mention', 'mention'], function (bot, message) {
+controller.hears([":shit:", ":hankey:", ":poop:"], ['ambient', 'direct_message', 'direct_mention', 'mention'], function (bot, message) {
   var responses = [":scream:", ":fire:", ":bomb:"];
     
   if (muted == false) bot.reply(message, multi_res(responses))
@@ -226,7 +226,7 @@ controller.hears(["(\\bspoiler\\b)"], ['ambient', 'direct_message', 'direct_ment
   if (muted == false) bot.reply(message, multi_res(responses))
 })
 
-controller.hears(["(\\b:euro:\\b)", "(\\b:dollar:\\b)", "(\\b:yen:\\b)", "(\\b:pound:\\b)", "(\\b:moneybag:\\b)"], ['ambient', 'direct_message', 'direct_mention', 'mention'], function (bot, message) {
+controller.hears([":euro:", ":dollar:", ":yen:", ":pound:", ":moneybag:"], ['ambient', 'direct_message', 'direct_mention', 'mention'], function (bot, message) {
   var responses = ["Tanz du Luder!", "Ka-Ching!", "Money money money!", "Make it rain!"];
     
   if (muted == false) bot.reply(message, multi_res(responses))
