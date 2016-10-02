@@ -31,6 +31,34 @@ if (token) {
   require('beepboop-botkit').start(controller, { debug: true })
 }
 
+if (!process.env.clientId || !process.env.clientSecret || !process.env.port) {
+  console.log('Error: Specify clientId clientSecret and port in environment');
+  process.exit(1);
+}
+
+var controller = Botkit.slackbot({
+  // interactive_replies: true, // tells botkit to send button clicks into conversations
+  json_file_store: './db_slackbutton_bot/',
+}).configureSlackApp(
+  {
+    clientId: process.env.clientId,
+    clientSecret: process.env.clientSecret,
+    scopes: ['bot'],
+  }
+);
+
+controller.setupWebserver(process.env.port,function(err,webserver) {
+  controller.createWebhookEndpoints(controller.webserver);
+
+  controller.createOauthEndpoints(controller.webserver,function(err,req,res) {
+    if (err) {
+      res.status(500).send('ERROR: ' + err);
+    } else {
+      res.send('Success!');
+    }
+  });
+});
+
 // ===============================
 // ========== Responses ==========
 // ===============================
