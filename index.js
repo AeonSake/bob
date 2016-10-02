@@ -360,7 +360,7 @@ controller.hears(["(\\bsei leise\\b)", "(\\bsei ruhig\\b)", "(\\bhalt die klappe
 
 controller.hears(["(\\bbob (rede|wach auf|wake up)\\b)"], ['ambient', 'direct_message', 'direct_mention', 'mention'], function (bot, message) {
   
-  if (message.user = "U2G081BBQ" && muted == true) {
+  if (message.user == "U2G081BBQ" && muted == true) {
     bot.reply(message, "I'm back, bitches!")
     bot.reply(message, "[Bob ist wieder aktiv]")
     muted = false
