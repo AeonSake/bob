@@ -38,14 +38,15 @@ if (token) {
 // ===== General stuff =====
 
 var muted = false;
+var vnr = "v1.2.27";
 
 function multi_res(res) {
   return res[Math.floor(Math.random() * res.length)];
 }
 
-controller.hears(["(\\bwer (bist|bistn) du\\b)", "(\\bwho are you\\b)", "(\\bwie (heißt|heisst|haßt|hasst|hast) du\\b)"], ['direct_message', 'direct_mention', 'mention'], function(bot, message) {
+controller.hears(["(\\bwer (bist|bistn) du\\b)", "(\\bwho are you\\b)", "(\\bwie (heißt|heisst|haßt|hasst|hast) du\\b)", "(\\bstell dich vor\\b)"], ['direct_message', 'direct_mention', 'mention'], function(bot, message) {
 
-  bot.reply(message, "Mein Name ist B.O.B. - kurz für Brainless Operating Bot.")
+  bot.reply(message, "Mein Name ist B.O.B. - kurz für Brainless Operating Bot. ["+vnr+"]")
 })
 
 controller.on('bot_channel_join', function (bot, message) {
@@ -410,14 +411,14 @@ controller.hears(["(\\bchallenge\\b)"], ['ambient', 'direct_message', 'direct_me
 })
 
 controller.hears(["(\\bmahlzeit\\b)", "(\\bmoizeit\\b)"], ['ambient', 'direct_message', 'direct_mention', 'mention'], function (bot, message) {
-  var responses = ["Mal dir deine Zeit doch selbst.", "Hab keine Stifte dabei!", "Darauf ein Bier."];
+  var responses = ["Mal dir deine Zeit doch selbst.", "Hab keine Stifte dabei!", "Darauf ein Bier.b", "Prost."];
     
   if (muted == false) bot.reply(message, multi_res(responses))
 })
 
 // insert here
 
-controller.hears(["(\\bb(o*)b\\b)", "(\\bbob(.)\\b)"], ['ambient', 'direct_message', 'direct_mention', 'mention'], function (bot, message) {
+controller.hears(["(\\bb(o*)b\\b)", "(\\bbob(by|i|y)\\b)"], ['ambient', 'direct_message', 'direct_mention', 'mention'], function (bot, message) {
   var responses = ["Für dich immer noch Herr Bob.", "Wadap dumbass?", "Was willst du jetzt schon wieder?!", "Lass mich in Ruhe.", "Sprich mich nicht an.", "Du hast kein Recht meinen Namen zu benutzen."];
     
   if (muted == false) bot.reply(message, multi_res(responses))
