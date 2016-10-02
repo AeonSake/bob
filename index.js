@@ -409,7 +409,15 @@ controller.hears(["(\\bchallenge\\b)"], ['ambient', 'direct_message', 'direct_me
   if (muted == false) bot.reply(message, multi_res(responses))
 })
 
-controller.hears(["(\\bbob\\b)"], ['ambient', 'direct_message', 'direct_mention', 'mention'], function (bot, message) {
+controller.hears(["(\\bmahlzeit\\b)", "(\\bmoizeit\\b)"], ['ambient', 'direct_message', 'direct_mention', 'mention'], function (bot, message) {
+  var responses = ["Mal dir deine Zeit doch selbst.", "Hab keine Stifte dabei!", "Darauf ein Bier."];
+    
+  if (muted == false) bot.reply(message, multi_res(responses))
+})
+
+// insert here
+
+controller.hears(["(\\bb(o*)b\\b)", "(\\bbob(.)\\b)"], ['ambient', 'direct_message', 'direct_mention', 'mention'], function (bot, message) {
   var responses = ["Für dich immer noch Herr Bob.", "Wadap dumbass?", "Was willst du jetzt schon wieder?!", "Lass mich in Ruhe.", "Sprich mich nicht an.", "Du hast kein Recht meinen Namen zu benutzen."];
     
   if (muted == false) bot.reply(message, multi_res(responses))
