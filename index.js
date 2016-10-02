@@ -483,9 +483,3 @@ controller.hears(["(\\bbobtest4\\b)"], ['ambient', 'direct_message', 'direct_men
   }
 })
 */
-
-
-controller.on('rtm_open',function(bot,message) {
-  if (muted == false) bot.reply(message, "Heyo!")
-  if (muted == false) bot.reply(message, "[Test Message]")
-})
