@@ -37,8 +37,10 @@ if (token) {
 
 // ===== General stuff =====
 
+var creator = "U2G081BBQ";
+var vnr = "v1.2.28";
+
 var muted = false;
-var vnr = "v1.2.27";
 
 function multi_res(res) {
   return res[Math.floor(Math.random() * res.length)];
@@ -350,7 +352,7 @@ controller.hears(["(\\bhow much is the fish\\b)"], ['ambient', 'direct_message',
 controller.hears(["(\\bsei leise\\b)", "(\\bsei ruhig\\b)", "(\\bhalt die klappe\\b)", "(\\bhalt die fresse\\b)", "(\\bhör auf\\b)", "(\\bshut up\\b)"], ['ambient', 'direct_message', 'direct_mention', 'mention'], function (bot, message) {
   var responses = ["Niemals.", "Make me.", "Heul doch.", "Lass ich mir von dir doch nicht sagen."];
   
-  if (message.user = "U2G081BBQ" && muted == false) {
+  if (message.user == creator && muted == false) {
     bot.reply(message, "Sehrwohl Meister.")
     bot.reply(message, "[Bob wurde deaktiviert]")
     muted = true
@@ -361,7 +363,7 @@ controller.hears(["(\\bsei leise\\b)", "(\\bsei ruhig\\b)", "(\\bhalt die klappe
 
 controller.hears(["(\\bbob (rede|wach auf|wake up)\\b)"], ['ambient', 'direct_message', 'direct_mention', 'mention'], function (bot, message) {
   
-  if (message.user == "U2G081BBQ" && muted == true) {
+  if (message.user == creator && muted == true) {
     bot.reply(message, "I'm back, bitches!")
     bot.reply(message, "[Bob ist wieder aktiv]")
     muted = false
@@ -414,6 +416,16 @@ controller.hears(["(\\bmahlzeit\\b)", "(\\bmoizeit\\b)"], ['ambient', 'direct_me
   var responses = ["Mal dir deine Zeit doch selbst.", "Hab keine Stifte dabei!", "Darauf ein Bier.b", "Prost."];
     
   if (muted == false) bot.reply(message, multi_res(responses))
+})
+
+controller.hears(["(\\hab (i|ich) recht bob\\b)", "\\brichtig bob\\b", "\\bgibst du mir recht bob\\b"], ['ambient', 'direct_message', 'direct_mention', 'mention'], function (bot, message) {
+  var responses1 = ["Absolut.", "Ganz genau.", "Ganz deiner Meinung.", "Definitiv.", "Yup."];
+  var responses2 = ["Warum sollte ich dir zustimmen?!", "Ich denke nicht.", "Noch ganz dicht?", "Sprich mit der Hand :hand::skin-tone-2:", "Yup."];
+    
+  if (muted == false) {
+    if (message.user == creator) bot.reply(message, multi_res(responses1))
+    else bot.reply(message, multi_res(responses2))
+  } 
 })
 
 // insert here
