@@ -391,7 +391,7 @@ controller.hears(["(\\bswag\\b)", "(\\byolo\\b)"], ['ambient', 'direct_message',
   if (muted == false) bot.reply(message, multi_res(responses))
 })
 
-controller.hears(["(\\bh(i*)lfe\\b)", "(\\bhelp\\b)"], ['ambient', 'direct_message', 'direct_mention', 'mention'], function (bot, message) {
+controller.hears(["(\\bhi*lfe\\b)", "(\\bhelp\\b)"], ['ambient', 'direct_message', 'direct_mention', 'mention'], function (bot, message) {
   var responses = ["Was gibt's?", "Der automatische Hilferuf wurde eingeleitet. Bitte bleiben Sie ruhig und warten Sie bis Hilfe eintrifft.", "Soll ich die netten Herren in den weißen Mänteln holen?", "Für dich nicht.", "Der Lebenslegastheniker benötigt mal wieder Unterstützung."];
     
   if (muted == false) bot.reply(message, multi_res(responses))
