@@ -391,7 +391,7 @@ controller.hears(["(\\bswag\\b)", "(\\byolo\\b)"], ['ambient', 'direct_message',
   if (muted == false) bot.reply(message, multi_res(responses))
 })
 
-controller.hears(["(\\bhilfe\\b)", "(\\bhelp\\b)"], ['ambient', 'direct_message', 'direct_mention', 'mention'], function (bot, message) {
+controller.hears(["(\\bh(i*)lfe\\b)", "(\\bhelp\\b)"], ['ambient', 'direct_message', 'direct_mention', 'mention'], function (bot, message) {
   var responses = ["Was gibt's?", "Der automatische Hilferuf wurde eingeleitet. Bitte bleiben Sie ruhig und warten Sie bis Hilfe eintrifft.", "Soll ich die netten Herren in den weißen Mänteln holen?", "Für dich nicht.", "Der Lebenslegastheniker benötigt mal wieder Unterstützung."];
     
   if (muted == false) bot.reply(message, multi_res(responses))
@@ -411,7 +411,6 @@ controller.hears(["(\\bchallenge\\b)"], ['ambient', 'direct_message', 'direct_me
 
 controller.hears(["(\\bbob\\b)"], ['ambient', 'direct_message', 'direct_mention', 'mention'], function (bot, message) {
   var responses = ["Für dich immer noch Herr Bob.", "Wadap dumbass?", "Was willst du jetzt schon wieder?!", "Lass mich in Ruhe.", "Sprich mich nicht an.", "Du hast kein Recht meinen Namen zu benutzen."];
-    message.
     
   if (muted == false) bot.reply(message, multi_res(responses))
 })
