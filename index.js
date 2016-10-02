@@ -43,7 +43,7 @@ function multi_res(res) {
   return res[Math.floor(Math.random() * res.length)];
 }
 
-controller.hears(["(\\bwer bist du\\b)", "(\\bwho are you\\b)", "(\\bwie heißt du\\b)", "(\\bwie hast du\\b)", "(\\bwie heisst du\\b)", "(\\bwer bistn du\\b)"], ['direct_message', 'direct_mention', 'mention'], function(bot, message) {
+controller.hears(["(\\bwer (bist|bistn) du\\b)", "(\\bwho are you\\b)", "(\\bwie (heißt|heisst|haßt|hasst|hast) du\\b)"], ['direct_message', 'direct_mention', 'mention'], function(bot, message) {
 
   bot.reply(message, "Mein Name ist B.O.B. - kurz für Brainless Operating Bot.")
 })
