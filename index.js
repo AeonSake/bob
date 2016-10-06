@@ -37,8 +37,8 @@ if (token) {
 
 // ===== General stuff =====
 
-var creator = "U2G081BBQ";
-var vnr = "v1.2.28";
+var creator = process.env.admin;
+var vnr = "v1.2.32";
 
 var muted = false;
 
@@ -407,7 +407,7 @@ controller.hears(["(\\bw(.)s is(.*) mi(.) di(.)\\b)"], ['ambient', 'direct_messa
 })
 
 controller.hears(["(\\bchallenge\\b)"], ['ambient', 'direct_message', 'direct_mention', 'mention'], function (bot, message) {
-  var responses = ["Für dich ist auch das Aufstehen eine metale Herausforderung."];
+  var responses = ["Für dich ist auch das Aufstehen eine mentale Herausforderung."];
     
   if (muted == false) bot.reply(message, multi_res(responses))
 })
@@ -418,7 +418,7 @@ controller.hears(["(\\bmahlzeit\\b)", "(\\bmoizeit\\b)"], ['ambient', 'direct_me
   if (muted == false) bot.reply(message, multi_res(responses))
 })
 
-controller.hears(["(\\hab (i|ich) recht bob\\b)", "\\brichtig bob\\b", "\\bgibst du mir recht bob\\b"], ['ambient', 'direct_message', 'direct_mention', 'mention'], function (bot, message) {
+controller.hears(["(\\hab (i|ich) recht bob\\b)", "\\brichtig bob\\b", "\\bgoi bob\\b", "\\bgibst du mir recht bob\\b"], ['ambient', 'direct_message', 'direct_mention', 'mention'], function (bot, message) {
   var responses1 = ["Absolut.", "Ganz genau.", "Ganz deiner Meinung.", "Definitiv.", "Yup."];
   var responses2 = ["Warum sollte ich dir zustimmen?!", "Ich denke nicht.", "Noch ganz dicht?", "Sprich mit der Hand :hand::skin-tone-2:", "Yup."];
     
