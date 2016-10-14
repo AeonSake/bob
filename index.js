@@ -38,7 +38,7 @@ if (token) {
 // ===== General stuff =====
 
 var creator = process.env.admin;
-var vnr = "v1.2.32";
+var vnr = "v1.2.33";
 
 var muted = false;
 
@@ -121,6 +121,12 @@ controller.hears(["(\\blisa\\b)"], ['ambient', 'direct_message', 'direct_mention
 
 controller.hears(["(\\balex\\b)", "(\\bdraco\\b)", "(\\bdracofix\\b)"], ['ambient', 'direct_message', 'direct_mention', 'mention'], function (bot, message) {
   var responses = ["LEEEEEEROYYYYY JENKINSSS!!!"];
+    
+  if (muted == false) bot.reply(message, multi_res(responses))
+})
+
+controller.hears(["(\\bdaniel\\b)", "(\\bjump(i|y)\\b)"], ['ambient', 'direct_message', 'direct_mention', 'mention'], function (bot, message) {
+  var responses = ["Humpy humpy winky winky time!"];
     
   if (muted == false) bot.reply(message, multi_res(responses))
 })
