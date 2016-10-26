@@ -38,7 +38,7 @@ if (token) {
 // ===== General stuff =====
 
 var creator = process.env.admin;
-var vnr = "v1.2.34";
+var vnr = "v1.2.35";
 
 var muted = false;
 
@@ -163,8 +163,8 @@ controller.hears(["(\\bhi\\b)", "(\\bheyo\\b)", "(\\bh(.)llo\\b)"], ['ambient', 
   if (muted == false) bot.reply(message, multi_res(responses))
 })
 
-controller.hears(["(\\basshole\\b)", "(\\bidiot\\b)"], ['ambient', 'direct_message', 'direct_mention', 'mention'], function (bot, message) {
-  var responses = ["I'm sorry you feel that way.", "Dad? Is that you?", "That's what your girlfriend told me about you last night.", "U wot m8?!"];
+controller.hears(["(\\basshole\\b)", "(\\bidiot\\b)", "(\\bbastard\\b)"], ['ambient', 'direct_message', 'direct_mention', 'mention'], function (bot, message) {
+  var responses = ["Wie er immer gleich beleidigen muss...", "Problem?"];
     
   if (muted == false) bot.reply(message, multi_res(responses))
 })
