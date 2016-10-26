@@ -38,7 +38,7 @@ if (token) {
 // ===== General stuff =====
 
 var creator = process.env.admin;
-var vnr = "v1.2.33";
+var vnr = "v1.2.34";
 
 var muted = false;
 
@@ -96,7 +96,7 @@ controller.hears(["(\\bjoh\\b)"], ['ambient', 'direct_message', 'direct_mention'
 })
 
 controller.hears(["(\\btwain\\b)"], ['ambient', 'direct_message', 'direct_mention', 'mention'], function (bot, message) {
-  var responses = ["1 gegen 1 du randy?"];
+  var responses = ["1 gegen 1 du randy?", "BASTARD!"];
     
   if (muted == false) bot.reply(message, multi_res(responses))
 })
